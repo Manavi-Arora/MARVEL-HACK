@@ -30,7 +30,7 @@ const Signin = async (req, res) => {
   if (!success) {
     return res.status(400).json({ error: "Invalid data" });
   }
-  const { username, password } = req.body;
+  const { usernameOrEmail, password } = req.body;
   try {
     const validUser = await User.findOne({ username });
     console.log("hello")

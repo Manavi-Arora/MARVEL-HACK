@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://Shivam:itsbeens0long@cluster0.ezyirm3.mongodb.net/Hackathon')
+mongoose.connect('mongodb+srv://manaviarora01:oWs3XNmsfAPJbsPt@cluster0.gpxml8r.mongodb.net/Hackathon')
 
 const quizScoreSchema = new mongoose.Schema({
     userId: {
