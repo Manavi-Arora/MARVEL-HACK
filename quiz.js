@@ -1,3 +1,5 @@
+let username = prompt("Enter username");
+
 //References
 let timeLeft = document.querySelector(".time-left");
 let quizContainer = document.getElementById("container");
@@ -208,10 +210,24 @@ function initial() {
 }
 
 //when user click on start button
-startButton.addEventListener("click", () => {
+startButton.addEventListener("click", async() => {
     startScreen.classList.add("hide");
     displayContainer.classList.remove("hide");
     initial();
+
+    const user =username;
+    const score =scoreCount;
+    // console.log(user, score);
+
+
+    const res = await fetch(`http://localhost:4000/leaderboard`, {
+        method: 'POST',
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({user, score}),
+        credentials: "include"
+    })
 });
 
 //hide quiz and display start screen
